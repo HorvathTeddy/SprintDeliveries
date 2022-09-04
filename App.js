@@ -1,17 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import DispoItem from './src/components/DispoItem';
-import restaurants from './assets/data/restaurants.json'
+import { StyleSheet, View } from 'react-native';
+import DispoDetailsScreen from './src/components/screens/DispoDetailsScreen';
+// import HomeScreen from './src/components/screens/HomeScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
 
-      <FlatList 
-        data={restaurants} 
-        renderItem={({ item }) => <DispoItem dispo={item} />} 
-        showsVerticalScrollIndicator={false}
-      />
+      <DispoDetailsScreen />
+      {/* <HomeScreen /> */}
 
       <StatusBar style='auto' />
     </View>
@@ -24,29 +21,7 @@ const styles = StyleSheet.create({
     backgroundColr: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
-    paddingVertical: 30, // temporary hack
-  },
-  dispoContainer:
-  {
-    width: '100%',
-    marginVertical: 10,
-  },
-  image:
-  {
-    width: '100%',
-    aspectRatio: 5/3,
-    marginBottom: 5,
-    
-  },
-  title: 
-  {
-    fontSize: 16,
-    fontWeight: '500',
-    marginVertical: 5,
-  },
-  subtitle: 
-  {
-    color: 'gray',
-  },
+    // padding: 10,
+    // paddingVertical: 30, // temporary hack
+  }
 });
