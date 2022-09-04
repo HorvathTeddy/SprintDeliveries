@@ -9,9 +9,16 @@ const DispoItem = ({ dispo }) =>
                  uri: dispo.image,
               }}
               style={styles.image}
-              />
-      <Text style={styles.title}>{dispo.title}</Text>
-      <Text style={styles.subtitle}>$ ${dispo.deliveryFee} {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text>
+      />
+      <View style={styles.row}>
+        <View>
+            <Text style={styles.title}>{dispo.name}</Text>
+            <Text style={styles.subtitle}>$ ${dispo.deliveryFee} &#8226;{dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text>
+        </View>
+        <View style={styles.rating}>
+            <Text>{dispo.rating}</Text>
+        </View>
+      </View>
     </View>
   )
 }
@@ -39,6 +46,21 @@ const styles = StyleSheet.create({
     {
       color: 'gray',
     },
+    row: 
+    {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    rating:
+    {
+        marginLeft: 'auto',
+        backgroundColor: 'lightgray',
+        width: 25,
+        height: 25,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+    }
   });
 
 export default DispoItem
