@@ -1,21 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-
-const DispoItem = () =>
-{
-  return (
-    <View style={styles.dispoContainer}>
-      <Image source=
-             {{ 
-               uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg',
-              }}
-              style={styles.image}
-              />
-      <Text style={styles.title}>El Cabo Coffe Bar Tres De Mayo</Text>
-      <Text style={styles.subtitle}>1.40 15-30 minutes</Text>
-    </View>
-  )
-}
+import DispoItem from './src/components/DispoItem';
 
 export default function App() {
   return (
