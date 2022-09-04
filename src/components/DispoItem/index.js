@@ -1,17 +1,17 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-const DispoItem = () =>
+const DispoItem = ({ dispo }) =>
 {
   return (
     <View style={styles.dispoContainer}>
       <Image source=
              {{ 
-               uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg',
+                 uri: dispo.image,
               }}
               style={styles.image}
               />
-      <Text style={styles.title}>El Cabo Coffe Bar Tres De Mayo</Text>
-      <Text style={styles.subtitle}>1.40 15-30 minutes</Text>
+      <Text style={styles.title}>{dispo.title}</Text>
+      <Text style={styles.subtitle}>$ ${dispo.deliveryFee} {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text>
     </View>
   )
 }
