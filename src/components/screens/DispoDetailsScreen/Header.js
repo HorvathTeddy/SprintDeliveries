@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
-import dispos from '../../../../assets/data/restaurants.json'
-let dispo = dispos[0];
+import styles from './styles'
 
-const DispoDetailsScreen = () => {
+
+const DispoHeader = ( { dispo } ) => {
   return (
     <View style={styles.page}>
       <Image source={{uri: dispo.image}} style={styles.image} />
@@ -14,45 +14,13 @@ const DispoDetailsScreen = () => {
         <Text style={styles.subtitle}>
             $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes
         </Text>
+
+        <Text style={styles.menuTitle}></Text>
       </View>
     </View>
   )
 }
 
-const styles = StyleSheet.create(
-{
-    page:
-    { 
-        flex: 1,
-    },
-    image:
-    {
-        width: '100%',
-        aspectRatio: 5/3,
-    },
-    iconContainer:
-    {
-      padding: 20,
-      position: 'absolute',
-      top: 40,
-      left: 10,
-    },
-    title: 
-    {
-      fontSize: 35,
-      fontWeight: '600',
-      marginVertical: 10,
-    },
-    name: {},
-    subtitle: 
-    {
-      fontSize: 15,
-      color: '#525252',
-    },
-    container :
-    {
-      margin: 10,
-    }
-})
 
-export default DispoDetailsScreen
+
+export default DispoHeader

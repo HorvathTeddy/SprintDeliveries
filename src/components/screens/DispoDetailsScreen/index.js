@@ -3,13 +3,14 @@ import dispos from '../../../../assets/data/restaurants.json'
 import { Ionicons } from '@expo/vector-icons'
 import MenuListItem from '../../MenuListItem'
 import Header from './Header'
+import styles from './styles'
 const dispo = dispos[0];
 
 const DispoDetailsScreen = () => {
   return (
     <View style={styles.page}>
       <FlatList 
-        ListHeaderComponent={Header}
+        ListHeaderComponent={() => <Header dispo={dispo} />}
         data={dispo.dishes}
         renderItem={({ item }) => <MenuListItem menuItem={item} />}
       />
@@ -22,40 +23,6 @@ const DispoDetailsScreen = () => {
   )
 }
 
-const styles = StyleSheet.create(
-{
-    page:
-    { 
-        flex: 1,
-    },
-    image:
-    {
-        width: '100%',
-        aspectRatio: 5/3,
-    },
-    iconContainer:
-    {
-      padding: 20,
-      position: 'absolute',
-      top: 40,
-      left: 10,
-    },
-    title: 
-    {
-      fontSize: 35,
-      fontWeight: '600',
-      marginVertical: 10,
-    },
-    name: {},
-    subtitle: 
-    {
-      fontSize: 15,
-      color: '#525252',
-    },
-    container :
-    {
-      margin: 10,
-    }
-})
+
 
 export default DispoDetailsScreen
