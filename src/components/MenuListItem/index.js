@@ -7,7 +7,7 @@ const MenuListItem = ({ menuItem }) => {
         <View style={{flex: 1}}>
             <Text style={styles.name} >{menuItem.name}</Text>
             <Text style={styles.description} >{menuItem.description}</Text>
-            <Text style={styles.price} >{menuItem.price}</Text>
+            <Text style={styles.price} >${menuItem.price}</Text>
         </View>
         {menuItem.image && (<Image source={{uri: menuItem.image}} style={styles.image} />)}
     </View>

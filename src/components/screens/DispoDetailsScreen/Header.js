@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import styles from './styles'
 
 
@@ -15,7 +15,7 @@ const DispoHeader = ( { dispo } ) => {
             $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes
         </Text>
 
-        <Text style={styles.menuTitle}></Text>
+        <Text style={styles.menuTitle}>Menu</Text>
       </View>
     </View>
   )

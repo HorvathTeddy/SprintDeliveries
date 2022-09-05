@@ -26,7 +26,7 @@ export default StyleSheet.create(
         },
         menuTitle:
         {
-            marginVertical: 20,
+            marginTop: 20,
             fontSize: 18,
             letterSpacing: 0.7,
         },  
@@ -39,6 +39,7 @@ export default StyleSheet.create(
         container :
         {
           margin: 10,
+        
         }
     })
 
