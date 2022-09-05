@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import DispoDetailsScreen from './src/components/screens/DispoDetailsScreen';
 import HomeScreen from './src/components/screens/HomeScreen';
-import MenuDetailsScreen from './src/components/screens/MenuDetaisScreen'
+import MenuDetailsScreen from './src/components/screens/MenuDetailsScreen'
 
 export default function App() {
   return (
