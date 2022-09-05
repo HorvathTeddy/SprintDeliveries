@@ -1,12 +1,20 @@
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet } from 'react-native'
 import dispos from '../../../../assets/data/restaurants.json'
+import { Ionicons } from '@expo/vector-icons'
 let dispo = dispos[0];
 
 const DispoDetailsScreen = () => {
   return (
     <View style={styles.page}>
       <Image source={{uri: dispo.image}} style={styles.image} />
-
+      <View style={styles.iconContainer}>
+        <Ionicons name='arrow-back-circle'
+                  size={45}
+                  color='white'
+                  style={styles.iconContainer}
+        />
+      </View>
+ 
       <View style={styles.container}>
         <Text style={styles.title}>{dispo.name}</Text>
         <Text style={styles.subtitle}>
@@ -29,6 +37,13 @@ const styles = StyleSheet.create(
         width: '100%',
         aspectRatio: 5/3,
     },
+    iconContainer:
+    {
+      padding: 20,
+      position: 'absolute',
+      top: 40,
+      left: 10,
+    },
     title: 
     {
       fontSize: 35,
@@ -39,7 +54,7 @@ const styles = StyleSheet.create(
     subtitle: 
     {
       fontSize: 15,
-      color: 'gray',
+      color: '#525252',
     },
     container :
     {
