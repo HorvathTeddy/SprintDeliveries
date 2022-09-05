@@ -1,6 +1,7 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
 import dispos from '../../../../assets/data/restaurants.json'
 import { Ionicons } from '@expo/vector-icons'
+import MenuListItem from '../../MenuListItem'
 let dispo = dispos[0];
 
 const DispoDetailsScreen = () => {
@@ -21,7 +22,10 @@ const DispoDetailsScreen = () => {
             $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes
         </Text>
       </View>
-
+      <FlatList 
+        data={dispo.dishes}
+        renderItem={({ item }) => <MenuListItem menuItem={item} />}
+      />
     </View>
   )
 }

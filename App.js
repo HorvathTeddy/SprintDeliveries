@@ -10,7 +10,7 @@ export default function App() {
       <DispoDetailsScreen />
       {/* <HomeScreen /> */}
 
-      <StatusBar style='auto' />
+      <StatusBar style='light' />
     </View>
   );
 }
