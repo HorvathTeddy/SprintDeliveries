@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import dispos from '../../../../assets/data/restaurants.json'
+import { disableErrorHandling } from 'expo'
 const menuItem = dispos[0].dishes[0]
 
 const MenuDetailsScreen = () => {
@@ -17,6 +18,11 @@ const MenuDetailsScreen = () => {
     setQuantity(quantity + 1)
   }
 
+  const getTotal = () =>
+  {
+    return (menuItem.price * quantity).toFixed(2)
+  }
+
   return (
     <View style={styles.page}>
       <Text style={styles.name} >{menuItem.name}</Text>
@@ -26,6 +32,11 @@ const MenuDetailsScreen = () => {
         <AntDesign name='minuscircleo' size={60} color={'black'} onPress={onMinus} />
         <Text style={styles.quantity}>{quantity}</Text>
         <AntDesign name='pluscircleo' size={60} color={'black'} onPress={onPlus} />
+      </View>
+      <View style={styles.button}>
+        <Text style={styles.buttonText}>
+          Add {quantity} to basket (${getTotal()})
+        </Text>
       </View>
     </View>
   )
@@ -67,8 +78,20 @@ const styles = StyleSheet.create(
   {
     fontSize: 25,
     marginHorizontal: 20,
+  },
+  button: 
+  {
+    backgroundColor: 'black',
+    marginTop: 'auto',
+    padding: 20,
+    alignItems: 'center',
+  },
+  buttonText:
+  {
+    color: 'white',
+    fontWeight: '600',
+    fontSize: 18,
   }
-}
-)
+})
 
 export default MenuDetailsScreen
