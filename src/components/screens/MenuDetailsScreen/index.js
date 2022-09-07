@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import dispos from '../../../../assets/data/restaurants.json'
-import { disableErrorHandling } from 'expo'
+import { useNavigation } from '@react-navigation/native'
+
 const menuItem = dispos[0].dishes[0]
 
 const MenuDetailsScreen = () => {
+  const navigation = useNavigation()
   const [quantity, setQuantity] = useState(1)
 
   const onMinus = () => 
@@ -33,11 +35,12 @@ const MenuDetailsScreen = () => {
         <Text style={styles.quantity}>{quantity}</Text>
         <AntDesign name='pluscircleo' size={60} color={'black'} onPress={onPlus} />
       </View>
-      <View style={styles.button}>
+
+      <Pressable onPress={() => navigation.navigate('Basket')} style={styles.button}>
         <Text style={styles.buttonText}>
-          Add {quantity} to basket (${getTotal()})
+          Add {quantity} to basket &#8226; (${getTotal()})
         </Text>
-      </View>
+      </Pressable>
     </View>
   )
 }

@@ -13,16 +13,10 @@ const Stack = createNativeStackNavigator()
 const RootNavigator = () => 
 {
     return (
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator screenOptions={{headerShown: false}} >
             <Stack.Screen 
                 name='HomeTabs'
                 component={HomeTabs}
-            >
-            </Stack.Screen>
-            <Stack.Screen 
-                name='Dispo' 
-                component={DispoDetailsScreen}
-                options={{ headerShown: false }}
             >
             </Stack.Screen>
             {/* <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
@@ -41,7 +35,7 @@ const HomeTabs = () =>
         <Tab.Navigator barStyle={{backgroundColor: '#fff'}}>
             <Tab.Screen 
             name='Home' 
-            component={HomeScreen} 
+            component={HomeStackNavigator} 
             options={{tabBarIcon: ({color}) => 
                 <Foundation name='home' size={24} color={'black'} 
             />,}}
@@ -72,6 +66,8 @@ const HomeStackNavigator = () =>
         <HomeStack.Navigator>
             <HomeStack.Screen name="Dispos" component={HomeScreen} />
             <HomeStack.Screen name="Dispo" component={DispoDetailsScreen} />
+            <HomeStack.Screen name="Menu" component={MenuDetailsScreen} />
+            <HomeStack.Screen name="Basket" component={Basket} />
         </HomeStack.Navigator>
     )
 }

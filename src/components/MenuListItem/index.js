@@ -1,16 +1,20 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 const MenuListItem = ({ menuItem }) => {
+    const navigation = useNavigation()
   return (
-    <View style={styles.container}>
+    <Pressable 
+        onPress={() => navigation.navigate('Menu', { id: menuItem.id })}
+        style={styles.container}
+    >
         <View style={{flex: 1}}>
             <Text style={styles.name} >{menuItem.name}</Text>
-            <Text style={styles.description} >{menuItem.description}</Text>
+            <Text style={styles.description} numberOfLines={2}>{menuItem.description}</Text>
             <Text style={styles.price} >${menuItem.price}</Text>
         </View>
         {menuItem.image && (<Image source={{uri: menuItem.image}} style={styles.image} />)}
-    </View>
+    </Pressable>
   )
 }
 
