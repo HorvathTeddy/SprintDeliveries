@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native'
 
+
 export default StyleSheet.create(
     {
         page:
@@ -30,7 +31,6 @@ export default StyleSheet.create(
             fontSize: 18,
             letterSpacing: 0.7,
         },  
-        name: {},
         subtitle: 
         {
           fontSize: 15,
@@ -39,7 +39,7 @@ export default StyleSheet.create(
         container :
         {
           margin: 10,
-        
+      
         }
     })
 

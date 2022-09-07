@@ -5,6 +5,7 @@ import HomeScreen from './src/components/screens/HomeScreen';
 import MenuDetailsScreen from './src/components/screens/MenuDetailsScreen'
 import Basket from './src/components/screens/Basket';
 import OrdersScreen from './src/components/screens/OrdersScreen';
+import OrderDetails from './src/components/screens/OrderDetails';
 
 export default function App() {
   return (
@@ -14,7 +15,8 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <MenuDetailsScreen /> */}
       {/* <Basket /> */}
-      <OrdersScreen />
+      {/* <OrdersScreen /> */}
+      <OrderDetails />
 
       <StatusBar style='light' />
     </View>
@@ -24,7 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColr: '#fff',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     // padding: 10,

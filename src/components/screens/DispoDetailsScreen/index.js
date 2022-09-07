@@ -3,7 +3,7 @@ import dispos from '../../../../assets/data/restaurants.json'
 import { Ionicons } from '@expo/vector-icons'
 import MenuListItem from '../../MenuListItem'
 import Header from './Header'
-import styles from './styles'
+import styles from '../OrderDetails/styles'
 const dispo = dispos[0];
 
 const DispoDetailsScreen = () => {

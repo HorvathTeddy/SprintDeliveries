@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native'
-import styles from './styles'
+import styles from '../OrderDetails/styles'
 
 
 const DispoHeader = ( { dispo } ) => {
