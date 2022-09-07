@@ -42,7 +42,7 @@ const HomeTabs = () =>
             />
             <Tab.Screen 
             name='Orders' 
-            component={OrdersScreen} 
+            component={OrdersStackNavigator} 
             options={{tabBarIcon: ({color}) => 
                 <MaterialIcons name='list-alt' size={24} color={'black'} 
             />,}}
@@ -72,5 +72,16 @@ const HomeStackNavigator = () =>
     )
 }
 
+const OrdersStack = createNativeStackNavigator()
+
+const OrdersStackNavigator = () =>
+{
+    return (
+        <OrdersStack.Navigator>
+            <OrdersStack.Screen name="Orders" component={OrdersScreen} />
+            <OrdersStack.Screen name="Order" component={OrderDetails} />
+        </OrdersStack.Navigator>
+    )
+}
 
 export default RootNavigator

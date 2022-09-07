@@ -6,7 +6,7 @@ import BasketItem from '../../BasketItem'
 
 const order = orders[0]
 
-const OrderDetails = () => {
+const OrderDetailsHeader = () => {
   return (
     <View>
       <View style={styles.page}>
@@ -18,11 +18,6 @@ const OrderDetails = () => {
         {order.status} &#8226; 2 days ago
           </Text>
           <Text style={styles.menuTitle}>Your orders</Text>
-          <FlatList
-            // ListHeaderComponenet={OrderDetailsHeader}
-            data={dispos[0].dishes}
-            renderItem={({ item }) => <BasketItem basketItem={item} />}
-        />
         </View>
       </View>
     </View>
@@ -30,15 +25,15 @@ const OrderDetails = () => {
   )
 }
 
-// const OrderDetails = () =>
-// {
-//     return (
-//         <FlatList
-//             // ListHeaderComponenet={OrderDetailsHeader}
-//             data={dispos[0].dishes}
-//             renderItem={({ item }) => <BasketItem basketItem={item} />}
-//         />
-//     )
-// }
+const OrderDetails = () =>
+{
+    return (
+        <FlatList
+            ListHeaderComponenet={OrderDetailsHeader}
+            data={dispos[0].dishes}
+            renderItem={({ item }) => <BasketItem basketItem={item} />}
+        />
+    )
+}
 
 export default OrderDetails
