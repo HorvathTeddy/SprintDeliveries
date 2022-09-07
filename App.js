@@ -1,25 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import DispoDetailsScreen from './src/components/screens/DispoDetailsScreen';
-import HomeScreen from './src/components/screens/HomeScreen';
-import MenuDetailsScreen from './src/components/screens/MenuDetailsScreen'
-import Basket from './src/components/screens/Basket';
-import OrdersScreen from './src/components/screens/OrdersScreen';
-import OrderDetails from './src/components/screens/OrderDetails';
+import { NavigationContainer } from '@react-navigation/native';
+import RootNavigator from './src/navigation';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-
-      {/* <DispoDetailsScreen /> */}
-      {/* <HomeScreen /> */}
-      {/* <MenuDetailsScreen /> */}
-      {/* <Basket /> */}
-      {/* <OrdersScreen /> */}
-      <OrderDetails />
-
+    // navigation container 
+    <NavigationContainer>
+      <RootNavigator />
       <StatusBar style='light' />
-    </View>
+    </NavigationContainer>
   );
 }
 

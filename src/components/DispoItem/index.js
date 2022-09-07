@@ -1,10 +1,19 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 
 
 const DispoItem = ({ dispo }) =>
-{
+{  
+    const navigation = useNavigation()
+
+    const onPress = () =>
+    {
+      navigation.navigate('Dispo', {id: dispo.id})
+    }
+
   return (
-    <View style={styles.dispoContainer}>
+
+    <Pressable style={styles.dispoContainer} onPress={onPress}>
       <Image source=
              {{ 
                  uri: dispo.image,
@@ -20,7 +29,7 @@ const DispoItem = ({ dispo }) =>
             <Text>{dispo.rating}</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   )
 }
 
