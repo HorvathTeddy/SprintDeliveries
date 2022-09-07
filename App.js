@@ -4,6 +4,7 @@ import DispoDetailsScreen from './src/components/screens/DispoDetailsScreen';
 import HomeScreen from './src/components/screens/HomeScreen';
 import MenuDetailsScreen from './src/components/screens/MenuDetailsScreen'
 import Basket from './src/components/screens/Basket';
+import OrdersScreen from './src/components/screens/OrdersScreen';
 
 export default function App() {
   return (
@@ -12,7 +13,8 @@ export default function App() {
       {/* <DispoDetailsScreen /> */}
       {/* <HomeScreen /> */}
       {/* <MenuDetailsScreen /> */}
-      <Basket />
+      {/* <Basket /> */}
+      <OrdersScreen />
 
       <StatusBar style='light' />
     </View>
