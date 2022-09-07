@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import DispoDetailsScreen from './src/components/screens/DispoDetailsScreen';
 import HomeScreen from './src/components/screens/HomeScreen';
 import MenuDetailsScreen from './src/components/screens/MenuDetailsScreen'
+import Basket from './src/components/screens/Basket';
 
 export default function App() {
   return (
@@ -10,7 +11,8 @@ export default function App() {
 
       {/* <DispoDetailsScreen /> */}
       {/* <HomeScreen /> */}
-      <MenuDetailsScreen />
+      {/* <MenuDetailsScreen /> */}
+      <Basket />
 
       <StatusBar style='light' />
     </View>
