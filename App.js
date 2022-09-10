@@ -2,8 +2,13 @@ import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import RootNavigator from './src/navigation';
 import { StatusBar } from 'expo-status-bar';
+import { Amplify } from 'aws-amplify'
+import { withAuthenticator } from 'aws-amplify-react-native/dist/Auth';
+import config from './src/aws-exports'
 
-export default function App() {
+Amplify.configure(config)
+
+function App() {
   return (
     // navigation container 
     <NavigationContainer>
@@ -23,3 +28,6 @@ const styles = StyleSheet.create({
     // paddingVertical: 30, // temporary hack
   }
 });
+
+
+export default withAuthenticator(App)
