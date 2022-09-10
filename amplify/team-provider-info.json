@@ -1,15 +1,15 @@
 {
   "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-uhrcannabis-staging-215303-authRole",
-      "UnauthRoleArn": "arn:aws:iam::585758174280:role/amplify-uhrcannabis-staging-215303-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::585758174280:role/amplify-uhrcannabis-staging-215303-authRole",
+      "AuthRoleName": "amplify-uhrcannabis-staging-25321-authRole",
+      "UnauthRoleArn": "arn:aws:iam::585758174280:role/amplify-uhrcannabis-staging-25321-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::585758174280:role/amplify-uhrcannabis-staging-25321-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-uhrcannabis-staging-215303-deployment",
-      "UnauthRoleName": "amplify-uhrcannabis-staging-215303-unauthRole",
-      "StackName": "amplify-uhrcannabis-staging-215303",
-      "StackId": "arn:aws:cloudformation:us-west-1:585758174280:stack/amplify-uhrcannabis-staging-215303/c786b3a0-3089-11ed-87f2-06c27a6b9dfd",
-      "AmplifyAppId": "d6y4k4u6joxcp"
+      "DeploymentBucketName": "amplify-uhrcannabis-staging-25321-deployment",
+      "UnauthRoleName": "amplify-uhrcannabis-staging-25321-unauthRole",
+      "StackName": "amplify-uhrcannabis-staging-25321",
+      "StackId": "arn:aws:cloudformation:us-west-1:585758174280:stack/amplify-uhrcannabis-staging-25321/bb2fe1b0-30b3-11ed-adae-064bc604bcc9",
+      "AmplifyAppId": "d3fxs4oshbsb65"
     },
     "categories": {
       "auth": {

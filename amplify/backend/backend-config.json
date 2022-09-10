@@ -10,14 +10,7 @@
         "usernameAttributes": [
           "EMAIL"
         ],
-        "signupAttributes": [
-          "NAME",
-          "EMAIL",
-          "PHONE_NUMBER",
-          "ADDRESS",
-          "BIRTHDATE",
-          "GENDER"
-        ],
+        "signupAttributes": [],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 6,
           "passwordPolicyCharacters": []

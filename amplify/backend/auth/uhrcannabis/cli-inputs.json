@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "uhrcanda581a68",
+    "resourceNameTruncated": "uhrcan6549d013",
     "userPoolName": "uhrcannabis",
     "autoVerifiedAttributes": [
       "email"
@@ -19,22 +19,15 @@
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 6,
     "passwordPolicyCharacters": [],
-    "requiredAttributes": [
-      "name",
-      "email",
-      "phone_number",
-      "address",
-      "birthdate",
-      "gender"
-    ],
+    "requiredAttributes": [],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "uhrcanda581a68_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "uhrcan6549d013_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "da581a68",
+    "sharedId": "6549d013",
     "resourceName": "uhrcannabis",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
