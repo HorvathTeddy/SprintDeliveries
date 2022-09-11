@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import HomeScreen from '../components/screens/HomeScreen'
 import DispoDetailsScreen from '../components/screens/DispoDetailsScreen'
 import Basket from '../components/screens/Basket'
@@ -7,6 +7,7 @@ import MenuDetailsScreen from '../components/screens/MenuDetailsScreen'
 import OrderDetails from '../components/screens/OrderDetails'
 import OrdersScreen from '../components/screens/OrdersScreen'
 import { FontAwesome5, Foundation, MaterialIcons } from '@expo/vector-icons'
+import ProfileScreen from '../components/screens/ProfileScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -27,31 +28,31 @@ const RootNavigator = () =>
     )
 }
 
-const Tab = createMaterialBottomTabNavigator()
+const Tab = createBottomTabNavigator()
 
 const HomeTabs = () =>
 {
     return (
-        <Tab.Navigator barStyle={{backgroundColor: '#fff'}}>
+        <Tab.Navigator screenOptions={{headerShown: false}} barStyle={{backgroundColor: '#fff'}}>
             <Tab.Screen 
-            name='Home' 
-            component={HomeStackNavigator} 
-            options={{tabBarIcon: ({color}) => 
-                <Foundation name='home' size={24} color={'black'} 
+                name='Home' 
+                component={HomeStackNavigator} 
+                options={{tabBarIcon: ({color}) => 
+                    <Foundation name='home' size={24} color={'black'} 
             />,}}
             />
             <Tab.Screen 
-            name='Orders' 
-            component={OrdersStackNavigator} 
-            options={{tabBarIcon: ({color}) => 
-                <MaterialIcons name='list-alt' size={24} color={'black'} 
+                name='Orders' 
+                component={OrdersStackNavigator} 
+                options={{tabBarIcon: ({color}) => 
+                    <MaterialIcons name='list-alt' size={24} color={'black'} 
             />,}}
             />
             <Tab.Screen 
-            name='Profile' 
-            component={MenuDetailsScreen} 
-            options={{tabBarIcon: ({color}) => 
-                <FontAwesome5 name='user-alt' size={24} color={'black'} 
+                name='Profile' 
+                component={ProfileScreen} 
+                options={{tabBarIcon: ({color}) => 
+                    <FontAwesome5 name='user-alt' size={24} color={'black'} 
             />,}}
             />
         </Tab.Navigator> 
