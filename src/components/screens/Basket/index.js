@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
-import dispos from '../../../../assets/data/restaurants.json'
+import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData'
 import BasketItem from '../../BasketItem'
 
 const dispo = dispos[0]
@@ -10,7 +10,7 @@ const Basket = () => {
 
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>{dispo.name}</Text>
+      <Text style={styles.name}>{dispo.dispoName}</Text>
       <Text style={{fontWeight: 'bold', marginTop: 20, fontSize: 19,}}>
           Your items
       </Text>

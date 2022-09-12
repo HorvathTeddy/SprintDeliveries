@@ -1,7 +1,7 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import DispoItem from '../../DispoItem';
 
-import dispos from '../../../../assets/data/restaurants.json'
+import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData.json'
 
 export default function HomeScreen() {
   return (

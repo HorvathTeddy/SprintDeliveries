@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
-import dispos from '../../../../assets/data/restaurants.json'
+import items from '../../../../WeedmapsScraper/ProductsScrape/itemData.json'
 import { useNavigation } from '@react-navigation/native'
 
-const menuItem = dispos[0].dishes[0]
+const menuItem = items[0].items[0]
 
 const MenuDetailsScreen = () => {
   const navigation = useNavigation()
@@ -22,13 +22,14 @@ const MenuDetailsScreen = () => {
 
   const getTotal = () =>
   {
-    return (menuItem.price * quantity).toFixed(2)
+    return (menuItem.unitCost * quantity).toFixed(2)
   }
 
   return (
     <View style={styles.page}>
-      <Text style={styles.name} >{menuItem.name}</Text>
-      <Text style={styles.description} >{menuItem.description}</Text>
+      <Text style={styles.name} >{menuItem.itemName}</Text>
+      <Text style={styles.description} >{menuItem.itemType}</Text>
+      <Text style={styles.description} >{menuItem.thcPercentage}</Text>
       <View style={styles.separator} /> 
       <View style={styles.row}>
         <AntDesign name='minuscircleo' size={60} color={'black'} onPress={onMinus} />

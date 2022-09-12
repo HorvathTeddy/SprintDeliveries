@@ -5,14 +5,14 @@ import styles from '../OrderDetails/styles'
 const DispoHeader = ( { dispo } ) => {
   return (
     <View style={styles.page}>
-      <Image source={{uri: dispo.image}} style={styles.image} />
+      <Image source={{uri: dispo.dispoStoreFrontImg}} style={styles.image} />
       <View style={styles.iconContainer}>
       </View>
  
       <View style={styles.container}>
-        <Text style={styles.title}>{dispo.name}</Text>
+        <Text style={styles.title}>{dispo.dispoName}</Text>
         <Text style={styles.subtitle}>
-            $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes
+            {/* $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes */}
         </Text>
 
         <Text style={styles.menuTitle}>Menu</Text>
