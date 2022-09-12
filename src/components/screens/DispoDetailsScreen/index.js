@@ -17,10 +17,11 @@ const DispoDetailsScreen = () => {
   const id = route.params?.id
   
   useEffect(() => {
+    if (!id) return
     DataStore.query(Dispo, id).then(setDispo)
 
     DataStore.query(Item, (item) => item.dispoID('eq', id)).then(setItems)
-  }, [])
+  }, [id])
 
   if (!dispo) 
   {
