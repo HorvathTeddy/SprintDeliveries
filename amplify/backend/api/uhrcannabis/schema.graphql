@@ -1,10 +1,11 @@
 type Item @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
-  imag: String
+  image: String
   description: String
   price: Float!
   dispoID: ID! @index(name: "byDispo")
+  unitCost: String
 }
 
 type Dispo @model @auth(rules: [{allow: public}]) {
@@ -19,4 +20,6 @@ type Dispo @model @auth(rules: [{allow: public}]) {
   lat: Float
   lng: Float
   Items: [Item] @hasMany(indexName: "byDispo", fields: ["id"])
+  numRatings: Int
 }
+ 

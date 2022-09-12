@@ -11,10 +11,11 @@ type DispoMetaData = {
 export declare class Item {
   readonly id: string;
   readonly name: string;
-  readonly imag?: string | null;
+  readonly image?: string | null;
   readonly description?: string | null;
   readonly price: number;
   readonly dispoID: string;
+  readonly unitCost?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Item, ItemMetaData>);
@@ -33,6 +34,7 @@ export declare class Dispo {
   readonly lat?: number | null;
   readonly lng?: number | null;
   readonly Items?: (Item | null)[] | null;
+  readonly numRatings?: number | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Dispo, DispoMetaData>);
