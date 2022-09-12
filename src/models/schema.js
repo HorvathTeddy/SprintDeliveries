@@ -17,8 +17,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "imag": {
-                    "name": "imag",
+                "image": {
+                    "name": "image",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -43,6 +43,13 @@ export const schema = {
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
+                    "attributes": []
+                },
+                "unitCost": {
+                    "name": "unitCost",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
                     "attributes": []
                 },
                 "createdAt": {
@@ -183,6 +190,13 @@ export const schema = {
                         "associatedWith": "dispoID"
                     }
                 },
+                "numRatings": {
+                    "name": "numRatings",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -228,5 +242,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "eb86afc2b07c7d257776480b9fff5d19"
+    "version": "955be0dd794b761741f041091c7d4c55"
 };
