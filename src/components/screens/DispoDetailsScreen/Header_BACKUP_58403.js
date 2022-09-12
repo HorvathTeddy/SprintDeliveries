@@ -6,9 +6,11 @@ const DEFAULT_IMAGE = "https://images.weedmaps.com/dispensaries/000/065/137/avat
 const DispoHeader = ( { dispo } ) => {
   return (
     <View style={styles.page}>
+<<<<<<< HEAD
       <Image source={{uri: dispo.dispoStoreFrontImg}} style={styles.image} />
-
+=======
       <Image source={{uri: dispo.image.startsWith('https') ? dispo.image : DEFAULT_IMAGE,}} style={styles.image} />
+>>>>>>> debug
       <View style={styles.iconContainer}>
       </View>
  

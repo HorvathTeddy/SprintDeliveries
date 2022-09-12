@@ -14,8 +14,13 @@ export default function HomeScreen() {
   useEffect(() => {
     fetchDispos()
   }, [])
-
-  return (
+   
+  useEffect(() => {
+    // const results = await DataStore.query(Dispo)
+    // setDispos(results)
+    DataStore.query(Dispo).then(setDispos)
+  }, [])
+    return (
       <View style={styles.page}>
       <FlatList 
         data={dispos} 
