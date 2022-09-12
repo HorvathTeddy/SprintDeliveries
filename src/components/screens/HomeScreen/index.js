@@ -1,10 +1,20 @@
+import { useEffect, useState } from 'react'
 import { StyleSheet, FlatList, View } from 'react-native';
 import DispoItem from '../../DispoItem';
-import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData.json'
-
-const dispo = dispos[0]
+import { DataStore } from 'aws-amplify';
+import { Dispo } from '../../../models'
 
 export default function HomeScreen() {
+  const [dispos, setDispos] = useState([])
+  const fetchDispos = async () => {
+    const results = await DataStore.query(Dispo)
+    setDispos(results)
+  }
+
+  useEffect(() => {
+    fetchDispos()
+  }, [])
+
   return (
       <View style={styles.page}>
       <FlatList 
