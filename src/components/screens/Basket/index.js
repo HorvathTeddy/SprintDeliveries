@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
 import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData'
+import items from '../../../../WeedmapsScraper/ProductsScrape/itemData.json'
 import BasketItem from '../../BasketItem'
 
 const dispo = dispos[0]
-
+const item = items[0]
 
 
 const Basket = () => {
@@ -16,7 +17,7 @@ const Basket = () => {
       </Text>
 
       <FlatList 
-        data={dispo.dishes} 
+        data={item.items} 
         renderItem={({item}) => <BasketItem basketItem={item}/>}
       />
 

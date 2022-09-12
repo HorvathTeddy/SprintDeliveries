@@ -1,7 +1,8 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import DispoItem from '../../DispoItem';
-
 import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData.json'
+
+const dispo = dispos[0]
 
 export default function HomeScreen() {
   return (

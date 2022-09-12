@@ -9,9 +9,9 @@ const MenuListItem = ({ menuItem }) => {
         style={styles.container}
     >
         <View style={{flex: 1}}>
-            <Text style={styles.name} >{menuItem.name}</Text>
-            <Text style={styles.description} numberOfLines={2}>{menuItem.description}</Text>
-            <Text style={styles.price} >${menuItem.price}</Text>
+            <Text style={styles.name} >{menuItem.dispoName}</Text>
+            <Text style={styles.description} numberOfLines={2}>{menuItem.dispoStatus}</Text>
+            <Text style={styles.price} >${menuItem.dispoOpenNow}</Text>
         </View>
         {menuItem.image && (<Image source={{uri: menuItem.image}} style={styles.image} />)}
     </Pressable>

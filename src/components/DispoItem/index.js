@@ -16,17 +16,17 @@ const DispoItem = ({ dispo }) =>
     <Pressable style={styles.dispoContainer} onPress={onPress}>
       <Image source=
              {{ 
-                 uri: dispo.image,
+                 uri: dispo.dispoStoreFrontImg,
               }}
               style={styles.image}
       />
       <View style={styles.row}>
         <View>
-            <Text style={styles.title}>{dispo.name}</Text>
-            <Text style={styles.subtitle}>$ ${dispo.deliveryFee} &#8226;{dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text>
+            <Text style={styles.title}>{dispo.dispoName}</Text>
+            {/* <Text style={styles.subtitle}>$ ${dispo.deliveryFee} &#8226;{dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text> */}
         </View>
         <View style={styles.rating}>
-            <Text>{dispo.rating}</Text>
+            <Text>{dispo.dispoRating}</Text>
         </View>
       </View>
     </Pressable>
