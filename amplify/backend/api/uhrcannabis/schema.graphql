@@ -1,0 +1,22 @@
+type Item @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  imag: String
+  description: String
+  price: Float!
+  dispoID: ID! @index(name: "byDispo")
+}
+
+type Dispo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  image: String!
+  deliveryFee: Float!
+  minDelivTime: Int!
+  maxDelivTime: Int!
+  rating: Float
+  address: String!
+  lat: Float
+  lng: Float
+  Items: [Item] @hasMany(indexName: "byDispo", fields: ["id"])
+}

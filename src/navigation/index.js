@@ -66,7 +66,7 @@ const HomeStackNavigator = () =>
     return (
         <HomeStack.Navigator>
             <HomeStack.Screen name="Dispos" component={HomeScreen} />
-            <HomeStack.Screen name="Dispo" component={DispoDetailsScreen} />
+            <HomeStack.Screen name="Dispo" component={DispoDetailsScreen} options={{headerShown: false}}/>
             <HomeStack.Screen name="Menu" component={MenuDetailsScreen} />
             <HomeStack.Screen name="Basket" component={Basket} />
         </HomeStack.Navigator>
