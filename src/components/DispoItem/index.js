@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 
+const DEFAULT_IMAGE = "https://images.weedmaps.com/dispensaries/000/065/137/avatar/original/1658264090-image000000.JPG?auto=format&w=96&h=96"
 
 const DispoItem = ({ dispo }) =>
 {  
@@ -16,17 +17,17 @@ const DispoItem = ({ dispo }) =>
     <Pressable style={styles.dispoContainer} onPress={onPress}>
       <Image source=
              {{ 
-                 uri: dispo.image,
+                 uri: dispo.image.startsWith('http') ? dispo.image : DEFAULT_IMAGE,
               }}
               style={styles.image}
       />
       <View style={styles.row}>
         <View>
             <Text style={styles.title}>{dispo.name}</Text>
-            <Text style={styles.subtitle}>$ ${dispo.deliveryFee} &#8226;{dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes</Text>
+            <Text style={styles.subtitle}>$ ${dispo.deliveryFee.toFixed(2)} &#8226;{dispo.minDelivTime}-{dispo.maxDelivTime} minutes</Text>
         </View>
         <View style={styles.rating}>
-            <Text>{dispo.rating}</Text>
+            <Text>{dispo.rating.toFixed(1)}</Text>
         </View>
       </View>
     </Pressable>
