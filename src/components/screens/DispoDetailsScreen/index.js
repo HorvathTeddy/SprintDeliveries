@@ -6,10 +6,11 @@ import Header from './Header'
 import styles from '../OrderDetails/styles'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
-import { Dispo } from '../../../models'
+import { Dispo, Item } from '../../../models'
 
 const DispoDetailsScreen = () => {
   const [dispo, setDispo] = useState(null)
+  const [items, setItems] = useState([])
 
   const route = useRoute()
   const navigation = useNavigation()
@@ -17,6 +18,8 @@ const DispoDetailsScreen = () => {
   
   useEffect(() => {
     DataStore.query(Dispo, id).then(setDispo)
+
+    DataStore.query(Item, (item) => item.dispoID('eq', id)).then(setItems)
   }, [])
 
   if (!dispo) 
@@ -28,8 +31,9 @@ const DispoDetailsScreen = () => {
     <View style={styles.page}>
       <FlatList 
         ListHeaderComponent={() => <Header dispo={dispo} />}
-        data={dispo.dishes}
+        data={items}
         renderItem={({ item }) => <MenuListItem menuItem={item} />}
+        keyExtractor={(item) => item.name}
       />
        <Ionicons 
           onPress={() => navigation.goBack()}

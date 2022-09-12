@@ -1,14 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
-import dispos from '../../../../assets/data/restaurants.json'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import { DataStore } from 'aws-amplify'
+import {Item} from '../../../models'
+import { ActivityIndicator } from 'react-native-paper'
 
-const menuItem = dispos[0].dishes[0]
+ 
 
 const MenuDetailsScreen = () => {
   const navigation = useNavigation()
+  const route = useRoute()
+
   const [quantity, setQuantity] = useState(1)
+  const [item, setItem] = useState(null)
+
+  const id = route.params.id
+
+  useEffect(() => {
+    DataStore.query(Item, id).then(setItem)
+  })
 
   const onMinus = () => 
   {
@@ -22,13 +33,17 @@ const MenuDetailsScreen = () => {
 
   const getTotal = () =>
   {
-    return (menuItem.price * quantity).toFixed(2)
+    return (item.price * quantity).toFixed(2)
+  }
+
+  if (!item) {
+    return <ActivityIndicator size='large' color='gray' />
   }
 
   return (
     <View style={styles.page}>
-      <Text style={styles.name} >{menuItem.name}</Text>
-      <Text style={styles.description} >{menuItem.description}</Text>
+      <Text style={styles.name} >{item.name}</Text>
+      <Text style={styles.description} >{item.description}</Text>
       <View style={styles.separator} /> 
       <View style={styles.row}>
         <AntDesign name='minuscircleo' size={60} color={'black'} onPress={onMinus} />
