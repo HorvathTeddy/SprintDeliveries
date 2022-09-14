@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Amplify } from 'aws-amplify'
 import { withAuthenticator } from 'aws-amplify-react-native/dist/Auth';
 import config from './src/aws-exports'
+import AuthContextProvider from './src/contexts/AuthContext'
 
 Amplify.configure({...config, Analytics: {disabled: true}})
 
@@ -12,7 +13,9 @@ function App() {
   return (
     // navigation container 
     <NavigationContainer>
-      <RootNavigator />
+      <AuthContextProvider> 
+        <RootNavigator />
+      </AuthContextProvider>
       <StatusBar style='light' />
     </NavigationContainer>
   );
