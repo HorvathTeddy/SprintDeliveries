@@ -17,7 +17,7 @@ const DispoDetailsScreen = () => {
   const navigation = useNavigation()
   const id = route.params?.id
 
-  const { setDispo : setBasketDispo } = useBasketContext()
+  const { setDispo : setBasketDispo, basket, basketItems } = useBasketContext()
   
   useEffect(() => {
     if (!id)
@@ -56,12 +56,13 @@ const DispoDetailsScreen = () => {
           color='white'
           style={styles.iconContainer}
         />
+        { basket && (
         <Pressable onPress={() => navigation.navigate("Basket")} style={styles.button}>
         <Text style={styles.buttonText}>
-          Open basket
+          Open basket ({basketItems.length})
         </Text>
       </Pressable>
-
+      )}
     </View>
   )
 }

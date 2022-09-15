@@ -1,12 +1,10 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
-import dispos from '../../../../assets/data/restaurants.json'
 import BasketItem from '../../BasketItem'
+import { useBasketContext } from '../../../contexts/BasketContext'
 
-const dispo = dispos[0]
-
-
-
-const Basket = () => {
+const Basket = () => 
+{
+  const { dispo } = useBasketContext()
 
   return (
     <View style={styles.page}>

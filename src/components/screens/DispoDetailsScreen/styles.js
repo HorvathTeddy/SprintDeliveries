@@ -8,6 +8,7 @@ const styles = StyleSheet.create(
     marginTop: 'auto',
     padding: 20,
     alignItems: 'center',
+    margin: 10,
     },
   buttonText:
     {
