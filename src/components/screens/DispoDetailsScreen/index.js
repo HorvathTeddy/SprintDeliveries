@@ -1,5 +1,3 @@
-import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
-import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData.json'
 import { useState, useEffect } from 'react'
 import { View, FlatList, ActivityIndicator } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
