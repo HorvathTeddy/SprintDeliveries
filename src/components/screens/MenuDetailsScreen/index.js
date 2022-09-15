@@ -5,7 +5,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
 import {Item} from '../../../models'
 import { ActivityIndicator } from 'react-native-paper'
-import { useBasketContext } from '../../../contexts/BasketContext'
+import  { useBasketContext } from '../../../contexts/BasketContext'
  
 
 const MenuDetailsScreen = () => {
@@ -121,5 +121,7 @@ const styles = StyleSheet.create(
     fontSize: 18,
   }
 })
+
+//const BasketItem = () =>
 
 export default MenuDetailsScreen
