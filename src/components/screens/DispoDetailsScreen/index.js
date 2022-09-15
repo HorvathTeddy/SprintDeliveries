@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { View, FlatList, ActivityIndicator } from 'react-native'
+import { View, FlatList, ActivityIndicator, Pressable, Text } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MenuListItem from '../../MenuListItem'
 import Header from './Header'
-import styles from '../OrderDetails/styles'
+import styles from './styles'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
 import { Dispo, Item } from '../../../models'
@@ -56,6 +56,12 @@ const DispoDetailsScreen = () => {
           color='white'
           style={styles.iconContainer}
         />
+        <Pressable onPress={() => navigation.navigate("Basket")} style={styles.button}>
+        <Text style={styles.buttonText}>
+          Open basket
+        </Text>
+      </Pressable>
+
     </View>
   )
 }

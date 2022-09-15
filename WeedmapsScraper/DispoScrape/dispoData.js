@@ -1,7 +1,7 @@
 [
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/065/137/avatar/original/1658264090-image000000.JPG?auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/065/137/avatar/original/1663116044-image000000.JPG?auto=format&w=96&h=96",
           "dispoName":"Goat Global",
           "dispoRating":"4.6",
           "numberOfRatings":"(154)",
@@ -11,7 +11,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/deliveries/000/042/800/avatar/original/1542048303-Humboldt_s_Logo2.5.jpg?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/deliveries/000/042/800/avatar/original/1542048303-Humboldt_s_Logo2.5.jpg?auto=format&w=96&h=96",
           "dispoName":"Humboldt's Premium Delivery",
           "dispoRating":"4.6",
           "numberOfRatings":"(79)",
@@ -21,7 +21,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/306/836/avatar/original/1616708916-ZEN_CANNABIS_HUMBOLDT_BUDDAH_CIRCLE_NEON_GREEN_FINAL__1_.jpg?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/306/836/avatar/original/1616708916-ZEN_CANNABIS_HUMBOLDT_BUDDAH_CIRCLE_NEON_GREEN_FINAL__1_.jpg?auto=format&w=96&h=96",
           "dispoName":"Zen Humboldt",
           "dispoRating":"4.2",
           "numberOfRatings":"(14)",
@@ -31,7 +31,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/053/617/avatar/original/1510583370-1506105422-logo.jpg?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/053/617/avatar/original/1510583370-1506105422-logo.jpg?auto=format&w=96&h=96",
           "dispoName":"Ecocann",
           "dispoRating":"4.5",
           "numberOfRatings":"(610)",
@@ -41,7 +41,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/056/144/avatar/original/1521219009-weed_mapscolor.jpg?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/056/144/avatar/original/1521219009-weed_mapscolor.jpg?auto=format&w=96&h=96",
           "dispoName":"Satori Wellness",
           "dispoRating":"4.3",
           "numberOfRatings":"(44)",
@@ -81,7 +81,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/301/832/avatar/original/1584572626-proper_cloud_logo.png?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/301/832/avatar/original/1584572626-proper_cloud_logo.png?auto=format&w=96&h=96",
           "dispoName":"Proper Wellness Rio Dell",
           "dispoRating":"4.5",
           "numberOfRatings":"(10)",
@@ -91,7 +91,7 @@
     ],
     [
        {
-          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/308/327/avatar/original/1620765938-element_7_rio_dell_logo.png?blur=500&q=1&auto=format&w=96&h=96",
+          "dispoStoreFrontImg":"https://images.weedmaps.com/dispensaries/000/308/327/avatar/original/1620765938-element_7_rio_dell_logo.png?auto=format&w=96&h=96",
           "dispoName":"Element 7 Rio Dell",
           "dispoRating":"4.3",
           "numberOfRatings":"(6)",
