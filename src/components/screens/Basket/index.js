@@ -4,17 +4,17 @@ import { useBasketContext } from '../../../contexts/BasketContext'
 
 const Basket = () => 
 {
-  const { dispo } = useBasketContext()
+  const { dispo, basketItems, totalPrice } = useBasketContext()
 
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>{dispo.name}</Text>
+      <Text style={styles.name}>{dispo?.name}</Text>
       <Text style={{fontWeight: 'bold', marginTop: 20, fontSize: 19,}}>
           Your items
       </Text>
 
       <FlatList 
-        data={dispo.dishes} 
+        data={basketItems} 
         renderItem={({item}) => <BasketItem basketItem={item}/>}
       />
 
@@ -22,7 +22,7 @@ const Basket = () =>
       
       <View style={styles.button}>
         <Text style={styles.buttonText}>
-          Create order
+          Create order &#8226; ${totalPrice.toFixed(2)}
         </Text>
       </View>
     </View>

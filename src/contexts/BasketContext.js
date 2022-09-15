@@ -13,6 +13,9 @@ const BasketContextProvider = ({ children }) =>
     const [basket, setBasket] = useState(null)
     const [basketItems, setBasketItems] = useState([])
 
+    // calculating basket price
+    const totalPrice = basketItems.reduce((sum, basketItem) => sum + basketItem.quantity * basketItem.Item.price, dispo?.delveryFee)
+
     // fetching the basket
     useEffect(() =>
     {
@@ -25,7 +28,7 @@ const BasketContextProvider = ({ children }) =>
     {
         if(basket)
         {
-            DataStore.query(BasketItem, (bd) => bd.basketId("eq", basket.id)).then(setBasketItems)
+            DataStore.query(BasketItem, (bd) => bd.basketID("eq", basket.id)).then(setBasketItems)
         }
     }, [basket])
 
@@ -49,7 +52,7 @@ const BasketContextProvider = ({ children }) =>
     }
 
     return (
-        <BasketContext.Provider value={{ addItemToBasket, setDispo, dispo, basket, basketItems }}>
+        <BasketContext.Provider value={{ addItemToBasket, setDispo, dispo, basket, basketItems, totalPrice }}>
             {children}
         </BasketContext.Provider>
     )
