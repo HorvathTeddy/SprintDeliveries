@@ -24,7 +24,6 @@ const DispoDetailsScreen = () => {
     {
       return
     } 
-
     setBasketDispo(null)
 
     DataStore.query(Dispo, id).then(setDispo)
