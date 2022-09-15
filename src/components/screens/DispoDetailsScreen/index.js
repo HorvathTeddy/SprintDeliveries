@@ -7,6 +7,7 @@ import styles from '../OrderDetails/styles'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
 import { Dispo, Item } from '../../../models'
+import { useBasketContext } from '../../../contexts/BasketContext'
 
 const DispoDetailsScreen = () => {
   const [dispo, setDispo] = useState(null)
@@ -15,13 +16,26 @@ const DispoDetailsScreen = () => {
   const route = useRoute()
   const navigation = useNavigation()
   const id = route.params?.id
+
+  const { setDispo : setBasketDispo } = useBasketContext()
   
   useEffect(() => {
-    if (!id) return
+    if (!id)
+    {
+      return
+    } 
+
+    setBasketDispo(null)
+
     DataStore.query(Dispo, id).then(setDispo)
 
     DataStore.query(Item, (item) => item.dispoID('eq', id)).then(setItems)
   }, [id])
+
+  useEffect(() => 
+  {
+    setBasketDispo(dispo)
+  }, [dispo])
 
   if (!dispo) 
   {
