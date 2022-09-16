@@ -7,6 +7,7 @@ import { withAuthenticator } from 'aws-amplify-react-native/dist/Auth';
 import config from './src/aws-exports'
 import AuthContextProvider from './src/contexts/AuthContext'
 import BasketContextProvider from './src/contexts/BasketContext'
+import OrderContextProvider from './src/contexts/OrderContext'
 
 Amplify.configure({...config, Analytics: {disabled: true}})
 
@@ -16,7 +17,9 @@ function App() {
     <NavigationContainer>
       <AuthContextProvider> 
         <BasketContextProvider>
-          <RootNavigator />
+          <OrderContextProvider>
+            <RootNavigator />
+          </OrderContextProvider>
         </BasketContextProvider>
       </AuthContextProvider>
 
