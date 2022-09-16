@@ -1,33 +1,31 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
-import dispos from '../../../../WeedmapsScraper/DispoScrape/dispoData'
-import items from '../../../../WeedmapsScraper/ProductsScrape/itemData.json'
+import { View, Text, StyleSheet, FlatList, Pressable } from 'react-native'
 import BasketItem from '../../BasketItem'
-
-const dispo = dispos[0]
-const item = items[0]
-
+import { useBasketContext } from '../../../contexts/BasketContext'
+import { useOrderContext } from '../../../contexts/OrderContext'
+import { useNavigation } from '@react-navigation/native'
 
 const Basket = () => {
 
   return (
     <View style={styles.page}>
-      <Text style={styles.name}>{dispo.dispoName}</Text>
+      <Text style={styles.name}>{dispo?.name}</Text>
       <Text style={{fontWeight: 'bold', marginTop: 20, fontSize: 19,}}>
           Your items
       </Text>
 
       <FlatList 
-        data={item.items} 
+        data={basketItems} 
         renderItem={({item}) => <BasketItem basketItem={item}/>}
       />
 
       <View style={styles.separator} /> 
       
-      <View style={styles.button}>
+      <Pressable onPress={onCreateOrder} style={styles.button}>
         <Text style={styles.buttonText}>
-          Create order
+          Create order &#8226; ${totalPrice.toFixed(2)}
         </Text>
-      </View>
+      </Pressable>
     </View>
   )
 }

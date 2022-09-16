@@ -5,20 +5,30 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { DataStore } from 'aws-amplify'
 import {Item} from '../../../models'
 import { ActivityIndicator } from 'react-native-paper'
-
+import  { useBasketContext } from '../../../contexts/BasketContext'
  
 const MenuDetailsScreen = () => {
+  const [item, setItem] = useState(null)
+  const [quantity, setQuantity] = useState(1)
+
   const navigation = useNavigation()
   const route = useRoute()
-
-  const [quantity, setQuantity] = useState(1)
-  const [item, setItem] = useState(null)
-
   const id = route.params.id
 
+  const { addItemToBasket } = useBasketContext()
+
   useEffect(() => {
-    DataStore.query(Item, id).then(setItem)
-  })
+    if (id) 
+    {
+      DataStore.query(Item, id).then(setItem)
+    }
+  }, [id])
+
+  const onAddToBasket = async () => 
+  {
+    await addItemToBasket(item, quantity)
+    navigation.goBack()
+  }
 
   const onMinus = () => 
   {
@@ -52,7 +62,7 @@ const MenuDetailsScreen = () => {
         <AntDesign name='pluscircleo' size={60} color={'black'} onPress={onPlus} />
       </View>
 
-      <Pressable onPress={() => navigation.navigate('Basket')} style={styles.button}>
+      <Pressable onPress={onAddToBasket} style={styles.button}>
         <Text style={styles.buttonText}>
           Add {quantity} to basket &#8226; (${getTotal()})
         </Text>
@@ -112,5 +122,7 @@ const styles = StyleSheet.create(
     fontSize: 18,
   }
 })
+
+//const BasketItem = () =>
 
 export default MenuDetailsScreen

@@ -64,8 +64,10 @@ export declare class BasketItem {
   readonly id: string;
   readonly quantity: number;
   readonly basketID: string;
+  readonly Item?: Item | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly basketItemItemId?: string | null;
   constructor(init: ModelInit<BasketItem, BasketItemMetaData>);
   static copyOf(source: BasketItem, mutator: (draft: MutableModel<BasketItem, BasketItemMetaData>) => MutableModel<BasketItem, BasketItemMetaData> | void): BasketItem;
 }
@@ -74,8 +76,10 @@ export declare class OrderItem {
   readonly id: string;
   readonly quantity: number;
   readonly orderID: string;
+  readonly Item?: Item | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
+  readonly orderItemItemId?: string | null;
   constructor(init: ModelInit<OrderItem, OrderItemMetaData>);
   static copyOf(source: OrderItem, mutator: (draft: MutableModel<OrderItem, OrderItemMetaData>) => MutableModel<OrderItem, OrderItemMetaData> | void): OrderItem;
 }

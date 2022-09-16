@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react'
-import { View, FlatList, ActivityIndicator } from 'react-native'
+import { View, FlatList, ActivityIndicator, Pressable, Text } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import MenuListItem from '../../MenuListItem'
 import Header from './Header'
-import styles from '../OrderDetails/styles'
+import styles from './styles'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
 import { DataStore } from 'aws-amplify'
 import { Dispo, Item } from '../../../models'
+import { useBasketContext } from '../../../contexts/BasketContext'
 
 const DispoDetailsScreen = () => {
   const [dispo, setDispo] = useState(null)
@@ -16,13 +17,25 @@ const DispoDetailsScreen = () => {
   const route = useRoute()
   const navigation = useNavigation()
   const id = route.params?.id
+
+  const { setDispo : setBasketDispo, basket, basketItems } = useBasketContext()
   
   useEffect(() => {
-    if (!id) return
+    if (!id)
+    {
+      return
+    } 
+    setBasketDispo(null)
+
     DataStore.query(Dispo, id).then(setDispo)
 
     DataStore.query(Item, (item) => item.dispoID('eq', id)).then(setItems)
   }, [id])
+
+  useEffect(() => 
+  {
+    setBasketDispo(dispo)
+  }, [dispo])
 
   if (!dispo) 
   {
@@ -44,6 +57,13 @@ const DispoDetailsScreen = () => {
           color='white'
           style={styles.iconContainer}
         />
+        { basket && (
+        <Pressable onPress={() => navigation.navigate("Basket")} style={styles.button}>
+        <Text style={styles.buttonText}>
+          Open basket ({basketItems.length})
+        </Text>
+      </Pressable>
+      )}
     </View>
   )
 }

@@ -16,6 +16,7 @@ const DispoHeader = ( { dispo } ) => {
         <Text style={styles.title}>{dispo.dispoName}</Text>
         <Text style={styles.subtitle}>
             {/* $ ${dispo.deliveryFee} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes */}
+            $ ${dispo.deliveryFee.toFixed(2)} &#8226; {dispo.minDeliveryTime}-{dispo.maxDeliveryTime} minutes
         </Text>
 
         <Text style={styles.menuTitle}>Menu</Text>

@@ -218,6 +218,20 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "Item": {
+                    "name": "Item",
+                    "isArray": false,
+                    "type": {
+                        "model": "Item"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": "id",
+                        "targetName": "basketItemItemId"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -233,6 +247,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "basketItemItemId": {
+                    "name": "basketItemItemId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -293,6 +314,20 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "Item": {
+                    "name": "Item",
+                    "isArray": false,
+                    "type": {
+                        "model": "Item"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "HAS_ONE",
+                        "associatedWith": "id",
+                        "targetName": "orderItemItemId"
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -308,6 +343,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
+                },
+                "orderItemItemId": {
+                    "name": "orderItemItemId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -735,5 +777,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "722e1c19116c6e568861148c9c3efc89"
+    "version": "25d4e0fc25344437af3fab9053dc3359"
 };
