@@ -8,11 +8,11 @@ const OrderListItem = ({order}) => {
       onPress={() => navigation.navigate('Order', {id: order.id })}
       style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}
     >
-       <Image source={{uri: order.Restaurant.image}} style={{width: 75, height: 75, marginRight: 5,}}></Image>
+       <Image source={{uri: order.Dispo.image}} style={{width: 75, height: 75, marginRight: 5,}}></Image>
 
        <View>
            <Text style={{fontWeight: '600', fontSize: 16}}>
-                {order.Restaurant.name}
+                {order.Dispo.name}
            </Text>
            <Text style={{marginVertical: 5}}>
                 3 items $38.45

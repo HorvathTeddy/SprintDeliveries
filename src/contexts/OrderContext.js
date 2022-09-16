@@ -11,7 +11,6 @@ const OrderContextProvider = ({ children }) =>
     const { dbUser } = useAuthContext()
     const { dispo, totalPrice, basketItems, basket } = useBasketContext()
 
-
     const [orders, setOrders] = useState([])
 
     useEffect(() => 
@@ -43,8 +42,16 @@ const OrderContextProvider = ({ children }) =>
         setOrders([...orders, newOrder])
     }
 
+    const getOrder = async (id) => 
+    {
+        const order = await DataStore.query(Order, id)
+        const orderItems = await DataStore.query(OrderItem, (oi) => oi.orderID("eq", id))
+
+        return {...order, items: orderItems}
+    }
+
     return (
-        <OrderContext.Provider value={{ createOrder, orders }}>
+        <OrderContext.Provider value={{ createOrder, orders, getOrder }}>
             { children }
         </OrderContext.Provider>
     )
