@@ -3,10 +3,11 @@ import BasketItem from '../../BasketItem'
 import { useBasketContext } from '../../../contexts/BasketContext'
 import { useOrderContext } from '../../../contexts/OrderContext'
 
+
 const Basket = () => 
 {
-  const { dispo, basketItems, totalPrice } = useBasketContext()
   const { createOrder } = useOrderContext()
+  const { dispo, basketItems, totalPrice } = useBasketContext()
 
   return (
     <View style={styles.page}>

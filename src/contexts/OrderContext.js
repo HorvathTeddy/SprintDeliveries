@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { DataStore } from 'aws-amplify'
 import { Order, OrderItem, Basket } from '../models'
-import { useAuthContext } from "./AuthContext";
 import { useBasketContext } from "./BasketContext";
+import { useAuthContext } from "./AuthContext";
 
 const OrderContext = createContext({})
 
@@ -12,7 +12,7 @@ const OrderContextProvider = ({ children }) =>
     const { dispo, totalPrice, basketItems, basket } = useBasketContext()
 
 
-    const [ orders, setOrders ] = useState([])
+    const [orders, setOrders] = useState([])
 
     useEffect(() => 
     {
@@ -21,8 +21,7 @@ const OrderContextProvider = ({ children }) =>
     const createOrder = async () => 
     {
         // create order
-        const newOrder = await DataStore.save(new Order(
-            {
+        const newOrder = await DataStore.save(new Order({
                 userID: dbUser.id,
                 Dispo: dispo,
                 status: 'NEW',
@@ -30,11 +29,13 @@ const OrderContextProvider = ({ children }) =>
             }
         ))
         // add all basketItems to the order
-        await Promise.all(basketItems.map(basketItem => DataStore.save(new OrderItem(
-            {
+        await Promise.all(
+            basketItems.map(basketItem => 
+                DataStore.save(
+                    new OrderItem({
                 quantity: basketItem.quantity,
                 orderID: newOrder.id,
-                Item: basketItem.Item,
+                Item: basketItem.Item
             }))))
         // delete basket
         await DataStore.delete(basket)

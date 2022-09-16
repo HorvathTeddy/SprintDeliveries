@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { DataStore } from "aws-amplify";
-import { Basket, BasketItem } from "../models";
+import { Basket, BasketItem, Dispo } from "../models";
 import { useAuthContext } from "./AuthContext";
 
 const BasketContext = createContext({})
@@ -14,7 +14,7 @@ const BasketContextProvider = ({ children }) =>
     const [basketItems, setBasketItems] = useState([])
 
     // calculating basket price
-    const totalPrice = basketItems.reduce((sum, basketItem) => sum + basketItem.quantity * basketItem.Item.price, dispo?.delveryFee)
+    const totalPrice = basketItems.reduce((sum, basketItem) => sum + basketItem.quantity * basketItem.Item.price, 0)
 
     // fetching the basket
     useEffect(() =>
