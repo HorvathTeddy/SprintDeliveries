@@ -39,9 +39,10 @@ const styles = StyleSheet.create({
     {
       width: '100%',
       marginVertical: 10,
-      borderRadius: '10%',
+      borderRadius: '33%',
       borderWidth: 3,
       alignItems: 'center',
+      backgroundColor: 'black'
     },
     image:
     {
@@ -55,6 +56,7 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: '500',
       marginVertical: 5,
+      color: 'white',
     },
     subtitle: 
     {
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
     },
     rating:
     {
-        marginLeft: 'auto',
+        marginLeft: 50,
         backgroundColor: 'lightgray',
         width: 25,
         height: 25,
