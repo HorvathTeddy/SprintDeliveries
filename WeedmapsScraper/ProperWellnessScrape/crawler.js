@@ -5,7 +5,7 @@ const { scrollPageToBottom } = require('puppeteer-autoscroll-down')
 
 let dispoData = []
 const baseUrl = 'https://weedmaps.com/'
-const menuUrl = 'https://weedmaps.com/dispensaries/livity'
+const menuUrl = 'https://weedmaps.com/dispensaries/proper-wellness-center-3'
 
 async function scrapeDispos(url)
 {

@@ -39,13 +39,16 @@ const styles = StyleSheet.create({
     {
       width: '100%',
       marginVertical: 10,
+      borderRadius: '10%',
+      borderWidth: 3,
+      alignItems: 'center',
     },
     image:
     {
-      width: '100%',
-      aspectRatio: 5/3,
+      width: '90%',
+      aspectRatio: 7/3,
       marginBottom: 5,
-      
+      borderRadius: '50%',
     },
     title: 
     {

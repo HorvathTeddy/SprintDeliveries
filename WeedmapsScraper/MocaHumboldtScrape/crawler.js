@@ -5,7 +5,7 @@ const { scrollPageToBottom } = require('puppeteer-autoscroll-down')
 
 let dispoData = []
 const baseUrl = 'https://weedmaps.com/'
-const menuUrl = 'https://weedmaps.com/dispensaries/livity'
+const menuUrl = 'https://weedmaps.com/deliveries/moca-humboldt-modern-cannabis'
 
 async function scrapeDispos(url)
 {
@@ -13,7 +13,7 @@ async function scrapeDispos(url)
     const browser = await puppeteer.launch({headless: false})
     const page = await browser.newPage()
     await page.goto(menuUrl)
-    //await page.click('body > div.modal-portal > div > div > div > div:nth-child(2) > div > div > div > div.global-age-gate__ButtonContainer-sc-1s12x61-2.juJtsI > button.button__Button-sc-1lygdz3-0.global-age-gate__ApproveButton-sc-1s12x61-4.bmyAxx.hEjHRB')
+    await page.click('body > div.modal-portal > div > div > div > div:nth-child(2) > div > div > div > div.global-age-gate__ButtonContainer-sc-1s12x61-2.juJtsI > button.button__Button-sc-1lygdz3-0.global-age-gate__ApproveButton-sc-1s12x61-4.bmyAxx.hEjHRB')
 
     // scroll to bottom to put all dispos into view
     const results = await page.$$('#content')
@@ -45,7 +45,7 @@ async function scrapeDispos(url)
     console.log(json)
 
     // write json file
-    fs.writeFile('./ItemData.json', json, err => {
+    fs.writeFile('./PWRioDellItemData.json', json, err => {
         if (err)
         {
             console.log('Error writing file', err)
